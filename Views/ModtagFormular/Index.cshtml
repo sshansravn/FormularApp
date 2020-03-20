@@ -1,0 +1,26 @@
+﻿@model FormularApp.Models.FormModel
+@{
+    string navn = Model.navn;
+    string email = Model.email;
+}
+@if (String.IsNullOrWhiteSpace(navn) || String.IsNullOrWhiteSpace(email)) {
+    <text>
+    <h2>Formular validerer ikke </h2>
+    <br/><br />Husk at udfylde navn og email<br/><br />
+
+<a href="/">Tilbage til formular</a>
+    </text>
+
+}
+else {
+    <text>
+    <h2>Formular validerer</h2>
+       Navn er: @navn<br />
+       email er: @email <br />
+       Telefon er: @Model.telefon
+<br /><br />
+<a href="/">Tilbage til formular</a>
+</text>
+    
+
+}
